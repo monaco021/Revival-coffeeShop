@@ -1,15 +1,34 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Product = sequelize.define('Product', {
-    name: DataTypes.STRING,
-    brandName: DataTypes.STRING,
-    roast: DataTypes.STRING,
-    price: DataTypes.INTEGER,
-    imageLink: DataTypes.STRING,
-    description: DataTypes.STRING
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    brandName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    roast: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    price: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    imageLink: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
   }, {});
   Product.associate = function(models) {
-    // associations can be defined here
+    Product.belongsTo(models.ShoppingCart, {foreignKey: "productId"});
+    Product.hasMany(models.Review, {foreignKey: "productId"});
   };
   return Product;
 };

@@ -14,7 +14,7 @@ module.exports = {
       },
       brandName: {
         allowNull: false,
-        type: Sequelize.STRING(100)
+        type: Sequelize.STRING(50)
       },
       roast: {
         allowNull: false,
@@ -30,7 +30,7 @@ module.exports = {
       },
       description: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,
