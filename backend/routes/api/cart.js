@@ -5,8 +5,9 @@ const {Product} = require("../../db/models")
 
 
 router.get("/", async(req, res) => {
-    const coffee = await Product.findAll();
-    return res.json(coffee);
+    const cart = await ShoppingCart.findAll();
+    console.log(cart);
+    return res.json(cart);
 });
 
 

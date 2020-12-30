@@ -23,9 +23,12 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <ul>
+    <ul id="top-nav-bar">
       <li>
-        <NavLink exact to="/">Home</NavLink>
+        <h2 id="nav-bar-logo">Revival</h2>
+      </li>
+      <li>
+        <NavLink exact to="/product-list">Home</NavLink>
         {isLoaded && sessionLinks}
       </li>
     </ul>
