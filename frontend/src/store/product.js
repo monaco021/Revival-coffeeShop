@@ -9,7 +9,6 @@ const load = list => ({
 
 export const getProduct = () => async dispatch => {
     const res = await fetch("/api/products");
-    // console.log(res);
     if (res.ok) {
         dispatch(load(res.data));
     }

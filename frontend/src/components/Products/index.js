@@ -30,12 +30,6 @@ const ProductListings = () => {
             </ul>
         </div>
     )
-
-
-    // const { productId } = useParams();
-    // const product = useSelector(state => {
-    //     return state.product.list.map(productId => state.product[productId]);
-    // });
 }
 
 export default ProductListings;
