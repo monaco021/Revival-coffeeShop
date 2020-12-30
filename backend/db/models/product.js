@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   const Product = sequelize.define('Product', {
     name: {
@@ -27,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   Product.associate = function(models) {
-    Product.belongsTo(models.ShoppingCart, {foreignKey: "productId"});
+    Product.belongsToMany(models.ShoppingCart, {foreignKey: "shoppingCartId", through: models.ProductCart});
     Product.hasMany(models.Review, {foreignKey: "productId"});
   };
   return Product;

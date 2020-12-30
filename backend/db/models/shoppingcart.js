@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   ShoppingCart.associate = function(models) {
     ShoppingCart.belongsTo(models.User, { foreignKey: "userId" });
+    ShoppingCart.belongsToMany(models.Product, {foreignKey: "productId", through: models.ProductCart });
   };
   return ShoppingCart;
 };
