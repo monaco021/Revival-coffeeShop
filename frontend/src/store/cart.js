@@ -44,10 +44,10 @@ export const reset = () => {
 
 export const getCart = (id) => async dispatch => {
     const res = await fetch(`/api/cart/${id}`);
-    if (res.ok) {
-        const cart = await res.json();
-        dispatch(loadCart(cart));
-    }
+    // if (res.ok) {
+    //     const cart = await res.json();
+    //     dispatch(loadCart(cart));
+    // }
 }
 
 const initialState = {
@@ -61,7 +61,8 @@ export default function cartReducer(state = initialState, action) {
         case LOAD: {
             return {
                 ...state,
-                Product: [...action.Product]
+                Product: [...action.Product],
+                userId: 0
             }
         }
         default:

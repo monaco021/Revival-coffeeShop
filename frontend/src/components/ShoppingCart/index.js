@@ -5,10 +5,10 @@ import { getCart } from "../../store/cart";
 
 const UsersCart = () => {
     const dispatch = useDispatch();
-    const cart = useSelector((state) => state);
+    const cart = useSelector((state) => state.session.user.id);
     useEffect(() => {
 
-        dispatch(getCart())
+        dispatch(getCart(cart))
     }, [dispatch])
 
     return (
