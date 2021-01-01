@@ -9,7 +9,7 @@ const LOAD = "cart/LOAD";
 const loadCart = (cart) => {
     return {
         type: LOAD,
-        cart
+        cart: cart
     }
 }
 
@@ -44,10 +44,9 @@ export const reset = () => {
 
 export const getCart = (id) => async dispatch => {
     const res = await fetch(`/api/cart/${id}`);
-    // if (res.ok) {
-    //     const cart = await res.json();
-    //     dispatch(loadCart(cart));
-    // }
+    if (res.ok) {
+        dispatch(loadCart(res.data));
+    }
 }
 
 const initialState = {
@@ -61,7 +60,7 @@ export default function cartReducer(state = initialState, action) {
         case LOAD: {
             return {
                 ...state,
-                Product: [...action.Product],
+                Product: action.Product,
                 userId: 0
             }
         }

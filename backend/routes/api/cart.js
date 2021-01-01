@@ -29,6 +29,11 @@ router.post(
     "/add/:productId",
     requireAuth,
     asyncHandler(async(req,res) => {
+        const userId = req.session.auth.userId;
+        const productId = req.params.productId;
+        let cart = await ShoppingCart.findOne({
+            where: { userId }
+        })
 
 }))
 

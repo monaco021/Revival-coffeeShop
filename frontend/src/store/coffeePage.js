@@ -10,22 +10,18 @@ const load = list => ({
 export const getPage = (id) => async dispatch => {
     const res = await fetch(`/api/products/${id}`);
     if (res.ok) {
-        const page = res.json()
-        dispatch(load(page));
+        dispatch(load(res.data));
     }
 }
 
 const initialState = {
-    Product: []
+   name: "coffee"
 };
 
 const coffeePageReducer = (state = initialState, action) => {
     switch(action.type) {
         case LOAD: {
-            return {
-                ...state,
-                Product: [...action.Product]
-            }
+            return action.list
         }
         default:
         return state;
