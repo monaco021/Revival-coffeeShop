@@ -9,6 +9,23 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userId: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
+      brand: {
+
+        type: Sequelize.STRING(100)
+      },
+      name: {
+
+        type: Sequelize.STRING(100)
+      },
+      image: {
+
+        type: Sequelize.TEXT
+      },
+      price: {
+
         type: Sequelize.INTEGER
       },
       createdAt: {

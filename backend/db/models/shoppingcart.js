@@ -5,6 +5,22 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     },
+    brand: {
+
+      type: DataTypes.STRING(100)
+    },
+    name: {
+
+      type: DataTypes.STRING(100)
+    },
+    image: {
+
+      type: DataTypes.TEXT
+    },
+    price: {
+
+      type: DataTypes.INTEGER
+    },
   }, {});
   ShoppingCart.associate = function(models) {
     ShoppingCart.belongsTo(models.User, { foreignKey: "userId" });

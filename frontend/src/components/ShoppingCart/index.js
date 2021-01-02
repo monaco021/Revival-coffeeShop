@@ -6,8 +6,7 @@ import { getCart } from "../../store/cart";
 const UsersCart = () => {
     const dispatch = useDispatch();
     const cart = useSelector((state) => state.session.user.id);
-    const cartArr = Object.values(cart);
-    console.log(cartArr)
+    console.log(cart);
     useEffect(() => {
 
         dispatch(getCart(cart))

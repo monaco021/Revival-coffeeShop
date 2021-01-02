@@ -30,7 +30,6 @@ router.post(
     requireAuth,
     asyncHandler(async(req,res) => {
       const user = await User.findByPk( req.body.userId);
-      console.log(user);
       const product = await Product.findByPk(req.params.productId);
       const cartItem = await ShoppingCart.create(
           {
