@@ -13,10 +13,10 @@ const loadCart = (cart) => {
     }
 }
 
-export const addItem = (productId) => {
+export const addItem = (product) => {
     return {
         type: ADD_ITEM,
-        productId
+        product
     };
 };
 
@@ -42,11 +42,21 @@ export const reset = () => {
     }
 };
 
-export const getCart = (id) => async dispatch => {
+export const getCart = (id) => async(dispatch) => {
     const res = await fetch(`/api/cart/${id}`);
     if (res.ok) {
         dispatch(loadCart(res.data));
     }
+}
+
+export const addToCart = (productId, userId) => async(dispatch) => {
+    const res = await fetch(`/api/cart/${productId}`, {
+        method: "POST",
+        body: JSON.stringify({
+            userId,
+        })
+    });
+    dispatch(addItem(res.data))
 }
 
 const initialState = {
@@ -62,6 +72,12 @@ export default function cartReducer(state = initialState, action) {
                 ...state,
                 Product: action.Product,
                 userId: 0
+            }
+        }
+        case ADD_ITEM: {
+            return {
+                ...state,
+                [action.product.id]: action.product
             }
         }
         default:

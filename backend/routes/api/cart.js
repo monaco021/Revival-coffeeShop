@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { ShoppingCart, Product } = require("../../db/models");
+const { ShoppingCart, Product, User } = require("../../db/models");
 const { requireAuth } = require('../../utils/auth');
 const asyncHandler = require("express-async-handler");
 
@@ -26,14 +26,21 @@ router.get(
 }));
 
 router.post(
-    "/add/:productId",
+    "/:productId",
     requireAuth,
     asyncHandler(async(req,res) => {
-        const userId = req.session.auth.userId;
-        const productId = req.params.productId;
-        let cart = await ShoppingCart.findOne({
-            where: { userId }
-        })
+      const user = await User.findByPk( req.body.userId);
+      console.log(user);
+      const product = await Product.findByPk(req.params.productId);
+      const cartItem = await ShoppingCart.create(
+          {
+              userId: user.dataValues.id,
+              brand: product.brandName,
+              name: product.name,
+              image: product.imageLink,
+              price: product.price
+          })
+          res.json(cartItem)
 
 }))
 
