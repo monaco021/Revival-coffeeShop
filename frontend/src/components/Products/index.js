@@ -14,16 +14,19 @@ const ProductListings = () => {
     return(
         <div>
             <h1>Product List</h1>
-            <ul>
+            <ul className="container">
                 {products.product.list.map((p) => {
                     return (
                         <div>
                             <NavLink key={p.name} to={`/product-list/${p.id}`}>
-                                <div>
+                                <div className="image-container">
                                     <img className="product-images" src={p.imageLink} alt={p.name}/>
                                 </div>
-                                <div>
-                                    {p.name}
+                                <div className="text">
+                                    {`${p.brandName}`}
+                                </div>
+                                <div className="text">
+                                    {`${p.name}`}
                                 </div>
                             </NavLink>
                         </div>

@@ -31,6 +31,9 @@ function Navigation({ isLoaded }){
         <NavLink exact to="/product-list">Home</NavLink>
         {isLoaded && sessionLinks}
       </li>
+      <li>
+        <NavLink exact to="/shopping-cart">Cart</NavLink>
+      </li>
     </ul>
   );
 }

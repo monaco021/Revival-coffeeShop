@@ -7,17 +7,17 @@ const asyncHandler = require("express-async-handler");
 
 
 router.get(
-    "/:id",
+    "/",
     requireAuth,
     asyncHandler(
     async(req, res) => {
-        const userId = req.params.id;
-        const cart = await ShoppingCart.findOne({
-            where: { userId },
+        const user = req.user
+        const cartItems = await ShoppingCart.findAll({
+            where: { userId: user.id },
             include: { model: Product }
         });
-        if (cart) {
-            return res.json(cart);
+        if (cartItems) {
+            return res.json(cartItems);
         } else {
             return res.json({});
         }

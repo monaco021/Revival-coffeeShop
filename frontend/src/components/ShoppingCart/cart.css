@@ -1,0 +1,9 @@
+.cart-container {
+    display: inline-block;
+}
+
+.product-images {
+    display: flex;
+    height: 100px;
+    width: auto;
+}

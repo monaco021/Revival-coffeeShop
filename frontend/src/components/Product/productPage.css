@@ -1,0 +1,13 @@
+.coffee-page-image {
+    display: flex;
+    height: 300px;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.coffee-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

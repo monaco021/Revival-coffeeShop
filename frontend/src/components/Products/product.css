@@ -1,4 +1,30 @@
+
+
 .product-images {
+    display: flex;
     height: 100px;
     width: auto;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    justify-content: center;
+}
+
+.text {
+    font-size: medium;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
