@@ -13,6 +13,7 @@
     flex-wrap: wrap;
     padding: 5px;
     justify-content: center;
+    border-bottom: black;
 }
 
 .text {
@@ -21,6 +22,7 @@
     flex-wrap: wrap;
     padding: 10px;
     justify-content: center;
+    color: black;
 }
 
 .image-container {
