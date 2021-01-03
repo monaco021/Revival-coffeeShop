@@ -49,6 +49,13 @@ export const addToCart = (productId, userId) => async(dispatch) => {
     dispatch(addItem(res.data))
 }
 
+export const removeFromCart = (cartId) => async(dispatch) => {
+    const res = await fetch(`/api/cart/${cartId}`, {
+        method: 'DELETE'
+    });
+    dispatch(removeItem(res.data));
+}
+
 const initialState = {
     userId: 0,
     products: []
@@ -70,6 +77,11 @@ export default function cartReducer(state = initialState, action) {
                 product: [...state.products, action.product]
             }
         }
+        case REMOVE_ITEM:
+            const newState = {...state}
+            delete newState[action.productId]
+            return newState
+
         default:
         return state;
     }

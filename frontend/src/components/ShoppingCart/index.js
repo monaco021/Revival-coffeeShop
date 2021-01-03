@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getCart } from "../../store/cart";
+import { getCart, removeFromCart } from "../../store/cart";
 import "./cart.css"
 
 const UsersCart = () => {
@@ -29,10 +29,17 @@ const UsersCart = () => {
                             <div >
                                 {`${item.name}`}
                             </div>
+                            <div>
+                                {`$${item.price}.00`}
+                            </div>
+                            <div>
+                            <button onClick={() => dispatch(removeFromCart(item.id))}>Remove Me</button>
+                            </div>
                         </div>
                     )
                 })}
             </ul>
+            <button>Check Out!</button>
         </div>
     )
 

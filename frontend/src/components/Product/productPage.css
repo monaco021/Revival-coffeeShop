@@ -4,10 +4,22 @@
     width: auto;
     align-items: center;
     justify-content: center;
+    /* border: 2px solid gray; */
+    box-shadow: 5px 5px 5px 5px gray;
 }
 
 .coffee-container {
-    display: flex;
+    float: left;
+    padding-right: 30px;
+    padding-left: 20px;
     align-items: center;
     justify-content: center;
+}
+
+.description {
+    padding-right: 10px;
+}
+
+.title {
+    padding-left: 20px;
 }

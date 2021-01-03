@@ -41,6 +41,14 @@ router.post(
           })
           res.json(cartItem)
 
+}));
+
+router.delete(
+    "/:cartId",
+    asyncHandler(async(req,res) => {
+        const cart = await ShoppingCart.findByPk(req.params.cartId);
+        await cart.destroy();
+        res.json({ message: "Item Deleted!" })
 }))
 
 

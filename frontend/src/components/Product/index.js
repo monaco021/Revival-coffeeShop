@@ -16,14 +16,19 @@ const GetCoffee = () => {
 
     return (
         <div>
-            <h1 className="coffee-container">{`${product.brandName} - ${product.name}`}</h1>
+            <h1 className="title">{`${product.brandName} - ${product.name}`}</h1>
             <div className="coffee-container">
                 <img className="coffee-page-image" src={product.imageLink} alt="coffeeImage" />
             </div>
-            <div>
-            <h3>{product.description}</h3>
+            <div className="description">
+            <h2>Description:</h2>
+                <h3 >{`${product.description}`}</h3>
             </div>
-            <button onClick={() => dispatch(addToCart(productId, user.id))}>add to cart</button>
+                <h3>{`Price: $${product.price}.99`}</h3>
+            <button onClick={() => dispatch(addToCart(productId, user.id))}>Buy Me!</button>
+            <div>
+                <h2>Reviews coming soon...</h2>
+            </div>
         </div>
     )
 }

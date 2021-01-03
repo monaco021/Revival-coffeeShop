@@ -23,18 +23,18 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <ul id="top-nav-bar">
-      <li>
-        <h2 id="nav-bar-logo">Revival</h2>
-      </li>
-      <li>
-        <NavLink exact to="/product-list">Home</NavLink>
-        {isLoaded && sessionLinks}
-      </li>
-      <li>
-        <NavLink exact to="/shopping-cart">Cart</NavLink>
-      </li>
-    </ul>
+      <ul id="top-nav-bar">
+        <li>
+          <h2 id="nav-bar-logo">Revival</h2>
+        </li>
+        <li>
+          <NavLink exact to="/product-list">Home</NavLink>
+        </li>
+        <li>
+          <NavLink exact to="/shopping-cart">Cart</NavLink>
+          {isLoaded && sessionLinks}
+        </li>
+      </ul>
   );
 }
 

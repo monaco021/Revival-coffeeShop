@@ -13,14 +13,13 @@
     flex-wrap: wrap;
     padding: 5px;
     justify-content: center;
-    border-bottom: black;
 }
 
 .text {
     font-size: medium;
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
+    padding: 5px;
     justify-content: center;
     color: black;
 }
@@ -29,4 +28,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.homepage-text {
+    font-family: Arial, Helvetica, sans-serif;
 }
