@@ -7,7 +7,7 @@ const SplashPage = () => {
             <div id="splash-page-container">
                 <img src={picture} alt="coffee-splash-backgroung" />
                 <div id="splash-overlay">
-                    <h1>Welcome to Revival</h1>
+                    <h1>Welcome to Revival, check our all of coffee by hitting the Home Button!</h1>
                 </div>
             </div>
         </div>
