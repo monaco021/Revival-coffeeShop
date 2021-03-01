@@ -13,7 +13,6 @@ router.get("/", async(req, res) => {
 
 router.get(
     "/:id",
-    requireAuth,
     asyncHandler( async(req,res) => {
         const coffeePage = await Product.findByPk(req.params.id)
         return res.json(coffeePage);
