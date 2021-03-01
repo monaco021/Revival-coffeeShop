@@ -20,11 +20,6 @@ router.get(
     })
 );
 
-// const book = await db.Book.findByPk(req.params.id, {
-//     include: { model: db.Review, include: db.User },
-//   });
-//   const reviews = book.Reviews;
-//   res.render("book", { book, reviews, token: req.csrfToken() });
 
 
 module.exports = router;
