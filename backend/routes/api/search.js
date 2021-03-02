@@ -17,3 +17,5 @@ router.get("/:item", async(req, res) => {
     });
     return res.json(coffee);
 });
+
+module.exports = router;
