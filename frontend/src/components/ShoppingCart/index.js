@@ -1,23 +1,29 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getCart, removeFromCart } from "../../store/cart";
+import {useHistory } from "react-router-dom"
 import "./cart.css"
 
 const UsersCart = () => {
+    const history = useHistory()
     const dispatch = useDispatch();
     const cart = useSelector((state) => state.session.user.id);
     const cartItems = useSelector((state) => state.cart.products)
-    console.log(cartItems);
-    useEffect(() => {
 
-        dispatch(getCart(cart))
+    useEffect(() => {
+        if(cart === null){
+            history("/signup")
+        } else {
+            dispatch(getCart(cart))
+        }
     }, [dispatch])
 
     return (
         <div>
             <h1>Shopping Cart</h1>
-            <ul className="cart-container">
-                {cartItems.map((item) => {
+            <div className="cart-container">
+                {cartItems === 0 ?                
+                cartItems.map((item) => {
                     return (
                         <div >
                             <div className="cart-images-container">
@@ -37,9 +43,13 @@ const UsersCart = () => {
                             </div>
                         </div>
                     )
-                })}
-            </ul>
-            <button>Check Out!</button>
+                })
+                : <h1>no items in cart</h1>
+            }
+            </div>
+            <div>
+                <button>Check Out!</button>
+            </div>
         </div>
     )
 
