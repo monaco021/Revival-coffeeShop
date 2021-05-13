@@ -22,7 +22,7 @@ const UsersCart = () => {
         <div>
             <h1>Shopping Cart</h1>
             <div className="cart-container">
-                {cartItems === 0 ?                
+                {cartItems !== 0 ?                
                 cartItems.map((item) => {
                     return (
                         <div >
@@ -48,7 +48,7 @@ const UsersCart = () => {
             }
             </div>
             <div>
-                <button>Check Out!</button>
+                <a href="http://localhost:3000/product-list">Check out!</a>
             </div>
         </div>
     )

@@ -3,6 +3,7 @@ import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import './LoginForm.css';
+//need to add react imagees for login rather using email => change those to place holders
 
 function LoginFormPage() {
   const dispatch = useDispatch();

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getProduct } from "../../store/product";
 import { NavLink } from "react-router-dom";
 import "./product.css"
-
+//tried using forech but map is a better choice, it process faster and alllows for returns of the elements
 
 const ProductListings = () => {
     const dispatch = useDispatch();
