@@ -1,6 +1,7 @@
 import "./splash.css";
 import picture from "./coffee-2.jpg"
 
+// need to rebuild to make text more dynamic + look at css to allow text to stand out more
 const SplashPage = () => {
     return (
         <div>
