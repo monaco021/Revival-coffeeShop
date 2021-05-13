@@ -1,5 +1,7 @@
 import { fetch } from "./csrf";
 
+//need to rethink this cart, should be decontrusted fully and easily accesbile for react elements
+//otherwise users will need to do a hard rest on page to see what's added or deleted 
 const ADD_ITEM = "cart/ADD_ITEM";
 const REMOVE_ITEM = "cart/REMOVE_ITEM";
 const RESET = "cart/RESET";
