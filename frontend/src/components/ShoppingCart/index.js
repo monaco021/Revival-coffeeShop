@@ -5,7 +5,7 @@ import {useHistory } from "react-router-dom"
 import "./cart.css"
 //need to rebuild cart right now users have to hard reset to see what has been deleted
 //also want to redesign the page looking to have simaliar layout to target or amazon cart 
-
+//should be named the same as my folder name 
 const UsersCart = () => {
     const history = useHistory()
     const dispatch = useDispatch();
